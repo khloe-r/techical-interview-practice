@@ -17,6 +17,7 @@ class ListNode:
 
 list1 = input()
 list1 = list1.split(' ')
+list1 = list(map(lambda x: int(x), list1))
 for i in range(len(list1) - 1, -1, -1):
   if i == len(list1) - 1:
     list1[i] = ListNode(list1[i])
@@ -25,6 +26,7 @@ for i in range(len(list1) - 1, -1, -1):
     
 list2 = input()
 list2 = list2.split(' ')
+list1 = list(map(lambda x: int(x), list2))
 for i in range(len(list2) - 1, -1, -1):
   if i == len(list2) - 1:
     list2[i] = ListNode(list2[i])
