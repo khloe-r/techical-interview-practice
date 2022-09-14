@@ -1,5 +1,5 @@
 """
-Day 31 - Sep 14
+Day 31 - Sep 5
 
 Given a binary search tree that contains unique values and two nodes within the tree, a, and b, return their lowest common ancestor. 
 Note: the lowest common ancestor of two nodes is the deepest node within the tree such that both nodes are descendants of it.
