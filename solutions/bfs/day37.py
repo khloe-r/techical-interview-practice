@@ -26,7 +26,7 @@ class BinaryTree:
     self.left = left
     self.right = right
 
-def levelOrderTraverse(tree):
+def largestLevel(tree):
   nodes = [tree]
   ans = []
   temp = None
@@ -59,13 +59,13 @@ Time Complexity: O(n) where n = # of nodes of tree
 """
 
 t1 = BinaryTree(4, BinaryTree(2), BinaryTree(7))
-print(levelOrderTraverse(t1))
+print(largestLevel(t1))
 
 t1 = BinaryTree(2, BinaryTree(10), BinaryTree(15, None, BinaryTree(20)))
-print(levelOrderTraverse(t1))
+print(largestLevel(t1))
 
 t1 = BinaryTree(1, BinaryTree(9, BinaryTree(3)), BinaryTree(32, None, BinaryTree(78)))
-print(levelOrderTraverse(t1))
+print(largestLevel(t1))
 
 t1 = BinaryTree(1, BinaryTree(5, BinaryTree(5), BinaryTree(3)), BinaryTree(6, None, BinaryTree(7)))
-print(levelOrderTraverse(t1))
+print(largestLevel(t1))
