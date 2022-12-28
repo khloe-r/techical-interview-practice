@@ -9,19 +9,15 @@ S = "c7w2", return ["c7w2", "c7W2", "C7w2", "C7W2"]
 """
 
 """
-Time Complexity: O(nm) where n = len(str) and m = # of permutations
+Time Complexity: O(n * 2^n) where n = len(str)
 """
 def capitalizationPerms(str):
   ans = [""]
-  for i in range(len(str)):
-    if str[i].isalpha():
-      l = len(ans)
-      for j in range(l):
-        ans.append(ans[j] + str[i].lower())
-        ans[j] += str[i].upper()
+  for x in range(len(str)):
+    if str[x].isalpha():
+      ans = [i+j for i in ans for j in [str[x].upper(), str[x].lower()]]
     else:
-      for j in range(len(ans)):
-        ans[j] += str[i]
+      ans = [i+str[x] for i in ans]
   return ans
 
 """
