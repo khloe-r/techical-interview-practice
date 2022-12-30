@@ -1,25 +1,27 @@
 """
 Day 54 - Sep 28
 
-Given an integer N, where N represents the number of pairs of parentheses (i.e. ”(“ and ”)”) you are given, return a list containing all possible well-formed parentheses you can create.
+Given a list of positive numbers without duplicates and a target number, find all unique combinations of the numbers that sum to the target. Note: You may use the same number more than once.
 
-Ex: Given the following value of N…
+Ex: Given the following numbers and target…
 
-N = 3, 
-return [  
-  "((()))",
-  "(()())",
-  "(())()",
-  "()(())",
-  "()()()"
+numbers = [2,4,6,3], target = 6,
+return [
+    [2,2,2],
+    [2,4],
+    [3,3],
+    [6]
 ]
 """
 
-def brackets(pairs, max):
+def brackets(pairs):
+  return bracketsHelp(pairs, pairs)
+
+def bracketsHelp(pairs, max):
   if pairs == 0.5:
     return [")"]
 
-  remaining = brackets(pairs - 0.5, max)
+  remaining = bracketsHelp(pairs - 0.5, max)
   r = len(remaining)
   for j in range(r):
     if (remaining[j].count(")") == remaining[j].count("(")):
@@ -36,6 +38,6 @@ def brackets(pairs, max):
 Time Complexity: O(n^2) where n = # of bracket combinations
 """
 
-print(brackets(2, 2))
-print(brackets(3, 3))
-print(brackets(4, 4))
+print(brackets(2))
+print(brackets(3))
+print(brackets(4))
