@@ -29,7 +29,7 @@ def coinPoints(coins, E):
     
 
 """
-Time Complexity: O(n^2) where n = len(weights)
+Time Complexity: O(n log n) where n = len(coins)
 """
 
 print(coinPoints([100, 150, 200], 150)) 
